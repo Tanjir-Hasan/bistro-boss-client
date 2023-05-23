@@ -47,19 +47,19 @@ const Collection = () => {
             >
                 <SwiperSlide>
                     <img src={slider1} alt="" />
-                    <p className='text-center text-3xl font-serif text-white uppercase -mt-14'>Salads</p>
+                    <p className='text-center font-[Cinzel] text-3xl text-white uppercase -mt-14'>Salads</p>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slider2} alt="" />
-                    <p className='text-center text-3xl font-serif text-white uppercase -mt-14'>Pizzas</p>
+                    <p className='text-center font-[Cinzel] text-3xl text-white uppercase -mt-14'>Pizzas</p>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slider3} alt="" />
-                    <p className='text-center text-3xl font-serif text-white uppercase -mt-14'>Soups</p>
+                    <p className='text-center font-[Cinzel] text-3xl text-white uppercase -mt-14'>Soups</p>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img src={slider4} alt="" />
-                    <p className='text-center text-3xl font-serif text-white uppercase -mt-14'>Deserts</p>
+                    <p className='text-center font-[Cinzel] text-3xl text-white uppercase -mt-14'>Deserts</p>
                 </SwiperSlide>
             </Swiper>
         </section>
