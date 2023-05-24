@@ -1,10 +1,10 @@
-import React from 'react';
 
-const SectionTitle = ({ heading, subHeading }) => {
+
+const SectionTitle = ({heading, subHeading}) => {
     return (
-        <div className='w-3/12 mx-auto text-center my-14'>
-            <p className='text-[#D99904] font-[Cinzel] mb-4'>{subHeading}</p>
-            <p className='text-3xl border-y-4 py-5 uppercase'>{heading}</p>
+        <div className="mx-auto text-center md:w-4/12 my-8">
+            <p className="text-yellow-600 mb-2">--- {subHeading} ---</p>
+            <h3 className="text-3xl uppercase border-y-4 py-4">{heading}</h3>
         </div>
     );
 };
