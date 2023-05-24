@@ -3,3 +3,9 @@
 @tailwind utilities;
 
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+/* customization of thumbnails of react-awesome-slider of home page */
+.thumbs-wrapper ul {
+    display: flex !important;
+    justify-content: center !important;
+}

@@ -1,24 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
 
     const navItem = <>
-        <li><a>Item 1</a></li>
-        <li tabIndex={0}>
-            <a className="justify-between">
-                Parent
-                <svg className="fill-current" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
-            </a>
-            <ul className="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
-            </ul>
-        </li>
-        <li><a>Item 3</a></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/menu">Menu</Link></li>
     </>
 
     return (
-        <div className="navbar fixed max-w-screen-xl mx-auto z-20 bg-opacity-25 text-white bg-[rgba(21, 21, 21, 0.5)]">
+        <div className="navbar fixed z-20 bg-opacity-25 text-white" style={{ backgroundColor: "rgba(21, 21, 21, 0.5)" }}>
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -28,12 +19,12 @@ const Navbar = () => {
                         {navItem}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl font-[Cinzel]">
+                <Link className="btn btn-ghost normal-case text-xl font-[Cinzel]">
                     <div className='flex flex-col'>
-                    <span className='tracking-wide'>Bistro Boss</span>
-                    <span className='font-thin'>Restaurant</span>
+                        <span className='tracking-wide'>Bistro Boss</span>
+                        <span className='font-thin'>Restaurant</span>
                     </div>
-                </a>
+                </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,7 +32,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <Link className="btn">Get started</Link>
             </div>
         </div>
     );
