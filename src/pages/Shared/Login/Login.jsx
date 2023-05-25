@@ -1,11 +1,10 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { loadCaptchaEnginge, LoadCanvasTemplate, validateCaptcha } from 'react-simple-captcha';
 import { AuthContext } from '../../../providers/AuthProvider';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const Login = () => {
-
-    const captchaRef = useRef(null);
 
     const [disabled, setDisabled] = useState(true);
 
@@ -28,14 +27,23 @@ const Login = () => {
             .then(result => {
                 const user = result.user;
                 console.log(user)
+                Swal.fire({
+                    title: 'User Logged in',
+                    showClass: {
+                      popup: 'animate__animated animate__fadeInDown'
+                    },
+                    hideClass: {
+                      popup: 'animate__animated animate__fadeOutUp'
+                    }
+                  })
             })
             .catch(error => {
                 console.log(error)
             })
     };
 
-    const handleCaptchaValidation = () => {
-        const user_captcha_value = captchaRef.current.value;
+    const handleCaptchaValidation = (e) => {
+        const user_captcha_value = e.target.value;
         if (validateCaptcha(user_captcha_value)) {
             setDisabled(false);
         }
@@ -64,8 +72,7 @@ const Login = () => {
                             <label className="label">
                                 <LoadCanvasTemplate />
                             </label>
-                            <input type="text" ref={captchaRef} name='captcha' placeholder="Type the captcha above" className="input input-bordered" />
-                            <button onClick={handleCaptchaValidation}>validate</button>
+                            <input type="text" onBlur={handleCaptchaValidation} name='captcha' placeholder="Type the captcha above" className="input input-bordered" />
                         </div>
                         <div className="form-control">
                             <label className="label">
