@@ -26,7 +26,7 @@ const NavBar = () => {
                 :
                 <><li><Link to="/login">Login</Link></li></>
         }
-        <Link to="/">
+        <Link to="/dashboard/mycart">
             <button className="btn btn-outline border-none gap-2">
                 <FaShoppingCart className="text-green-400" size={"1.5rem"} />
                 <div className="badge badge-primary">{cart?.length || 0}</div>
