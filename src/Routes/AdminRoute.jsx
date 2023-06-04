@@ -10,14 +10,14 @@ const AdminRoute = ({ children }) => {
     const location = useLocation();
 
 
-    if (loading || isAdminLoading){
+    if (loading || isAdminLoading) {
         return <div>Loading</div>
     }
 
     if (user && isAdmin) {
         return children;
     }
-
+    // 
     return <Navigate to="/" state={{ from: location }} replace></Navigate>;;
 };
 
